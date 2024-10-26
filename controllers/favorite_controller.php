@@ -32,4 +32,3 @@ if (isset($_GET['action']) && isset($_GET['game_id'])) {
     header("Location: ../index.php");
     exit();
 }
-?>

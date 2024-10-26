@@ -28,4 +28,3 @@ function deleteGame($id) {
     $stmt->bind_param("i", $id);
     return $stmt->execute();
 }
-?>
