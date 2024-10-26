@@ -3,6 +3,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+if (!isset($_SESSION['favorites'])) {     $_SESSION['favorites'] = [];}
 
 function addFavorite($game_id) {
     if (!in_array($game_id, $_SESSION['favorites'])) {
