@@ -1,14 +1,12 @@
 <?php 
- namespace tekalign\project {
     // Start Session Management
     session_start();
 
-    include 'controllers/favorite_controller.php';
-    include 'models/game_model.php';
+    include 'src/controllers/favorite_controller.php';
+    include 'src/models/game_model.php';
 
     $favorites = getFavorites();
     $games = getAllGames();
- }
  ?>
 <!DOCTYPE html>
 <html>
