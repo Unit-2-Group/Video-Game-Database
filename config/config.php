@@ -1,8 +1,8 @@
 <?php
 
 $db_host = 'localhost';
-$db_user = 'kobe';
-$db_pass = 'Supercoco14';
+$db_user = 'root';
+$db_pass = '';
 $db_name = 'videogame_db';
 
 function db_connect() {
