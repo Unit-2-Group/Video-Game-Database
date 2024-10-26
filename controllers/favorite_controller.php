@@ -1,8 +1,7 @@
 <?php
 
-// Initialize favorites array if it doesn't exist
-if (!isset($_SESSION['favorites'])) {
-    $_SESSION['favorites'] = [];
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 
 function addFavorite($game_id) {
