@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $release_date = $_POST['release_date'];
         addGame($name, $genre_id, $release_date);
     }
-    header("Location: ../index.php");
+    header("Location: .../index.php");
     exit();
 }
 ?>

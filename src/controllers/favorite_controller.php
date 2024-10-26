@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Initialize favorites array if it doesn't exist
 if (!isset($_SESSION['favorites'])) {

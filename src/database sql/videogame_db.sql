@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS 'videogame_db';
+DROP DATABASE IF EXISTS videogame_db;
 
 CREATE DATABASE videogame_db;
 USE videogame_db;
@@ -37,3 +37,13 @@ CREATE TABLE reviews (
     FOREIGN KEY (game_id) REFERENCES games(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+INSERT INTO genres (name) VALUES 
+('Action'),
+('Adventure'),
+('RPG'),
+('Simulation'),
+('Strategy'),
+('Sports'),
+('Puzzle'),
+('Horror');

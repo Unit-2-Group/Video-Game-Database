@@ -22,7 +22,7 @@
         </header>
         <main>
             <h2>Add a new game</h2>
-            <form action="controllers/game_controller.php" method="post">
+            <form action="src/controllers/game_controller.php" method="post">
                 <label for="name">Game Name:</label>
                 <input type="text" id="name" name="name" required><br>
                 <label for="genre_id">Genre id:</label>
