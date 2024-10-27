@@ -90,7 +90,7 @@
                      <?php endif; ?>
                 <?php endforeach; ?>
             <?php endforeach; ?>
-        </ul>
+        <!-- </ul>
         <h2>Your Genres</h2>
         <ul>
             <?php foreach($genres as $fav_id): ?>
@@ -100,7 +100,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php endforeach; ?>
-        </ul>
+        </ul> -->
 
     </body>
 </html>
