@@ -28,3 +28,16 @@ function deleteGame($id) {
     $stmt->bind_param("i", $id);
     return $stmt->execute();
 }
+
+function getGame($id) {
+    $conn = db_connect();
+    $sql = "SELECT * FROM games WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $game = $result->fetch_assoc();
+    $conn->close();
+    $stmt->close();
+    return $game ? $game : null;
+}

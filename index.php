@@ -32,7 +32,8 @@
         <ul>
             <?php foreach($games as $game): ?>
                 <li>
-                    <?= htmlspecialchars($game['name']) ?> - Released: <?= htmlspecialchars($game['release_date']) ?>                        
+                    <?= htmlspecialchars($game['name']) ?> - Released: <?= htmlspecialchars($game['release_date']) ?>
+                    <a href="views/game_reviews.php?game_id=<?= $game['id'] ?>">View Reviews</a>                        
                     <?php if (in_array($game['id'], $favorites)): ?>
                         <a href="controllers/favorite_controller.php?action=remove&game_id=<?= $game['id'] ?>"> Remove From Favorites</a>
                     <?php else: ?>
