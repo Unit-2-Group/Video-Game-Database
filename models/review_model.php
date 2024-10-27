@@ -5,7 +5,7 @@ include_once __DIR__ . '/../config/config.php';
 function getReviews($game_id) {
     $conn = db_connect();
     $sql = "SELECT r.id, r.rating, r.review_text, r.review_date, u.username 
-            FROM reviews AS r JOIN users AS r.user_id = u.id
+            FROM reviews r JOIN users u ON r.user_id = u.id
             WHERE r.game_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $game_id);

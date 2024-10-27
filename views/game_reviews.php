@@ -2,6 +2,12 @@
 
 session_start();
 
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    $user_id = null;
+}
+
 include '../models/game_model.php';
 include '../models/review_model.php';
 
@@ -23,7 +29,7 @@ $reviews = getReviews($game_id);
 
         <form action="../controllers/review_controller.php" method="post">
             <input type="hidden" name="game_id" value="<?= $game_id ?>">
-            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+            <input type="hidden" name="user_id" value="<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>">
             <label for="rating">Rating (1-5):</label>
             <input type="number" id="rating" name="rating" min="1" max="5" required><br>
             <label for="review_text">Review:</label>
