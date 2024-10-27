@@ -21,3 +21,4 @@ function getALLGenres() {
     return $genres;
 }
 ?>
+
