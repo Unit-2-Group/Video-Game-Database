@@ -3,6 +3,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+if (!isset($_SESSION['favorites'])) {     $_SESSION['favorites'] = [];}
 
 if (!isset($_SESSION['favorites'])) {
     $_SESSION['favorites'] = [];
