@@ -79,8 +79,6 @@
                 </tbody>
             </table>
 
-
-
         <h2>Your Favorites</h2>
         <ul>
             <?php foreach($favorites as $fav_id): ?>

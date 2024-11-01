@@ -5,6 +5,10 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if (!isset($_SESSION['favorites'])) {     $_SESSION['favorites'] = [];}
 
+if (!isset($_SESSION['favorites'])) {
+    $_SESSION['favorites'] = [];
+}
+
 function addFavorite($game_id) {
     if (!in_array($game_id, $_SESSION['favorites'])) {
         $_SESSION['favorites'][] = $game_id;
