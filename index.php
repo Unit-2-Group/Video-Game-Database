@@ -32,7 +32,7 @@
                     <option value="<?= htmlspecialchars($genre['id']) ?>"><?= htmlspecialchars($genre['name']) ?></option>
                 <?php endforeach; ?>
             </select>
-<br>
+            <br>
             <label for="release_date">Release Date:</label>
             <input type="date" id="release_date" name="release_date" required><br>
             <button type="submit" name="add_game">Add Game</button>
