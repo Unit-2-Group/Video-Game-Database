@@ -7,20 +7,41 @@
     include 'models/genre_model.php';
 
 
+
     $favorites = getFavorites();
     $games = getAllGames();
     $genres = getAllGenres();
  ?>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="maincss.css">
+
     <head>
         <title>Video Game Library</title>
-        <link rel="stylesheet" href="maincss.css">
     </head>
     <body>
         <header>
             <h1>Video Game Library</h1>
         </header>
+        <p>
+        <?php
+        // Check if the username is set in the session
+        if (isset($_SESSION['username'])) {
+            $username = htmlspecialchars($_SESSION['username']); // Sanitize the username
+            echo "Welcome, $username!<b>"; // Display the welcome message
+            // Logout button
+            echo '<form action="controllers/user_controller.php?action=logout"
+                    method="post" 
+                    style="display:inline;">
+                    <button type="submit" class="logout-button">Logout</button>
+                    </form>';
+        } else {
+            echo '<a href="views/login_view.php">Click here to log in</a> or, 
+                  <a href="views/registration_view.php">sign up here</a>';
+        }
+        ?>
+        </p>
+
         <h2>Add a new game</h2>
         <form action="controllers/game_controller.php" method="post">
             <label for="name">Game Name:</label>
@@ -88,7 +109,7 @@
                      <?php endif; ?>
                 <?php endforeach; ?>
             <?php endforeach; ?>
-        </ul>
+        <!-- </ul>
         <h2>Your Genres</h2>
         <ul>
             <?php foreach($genres as $fav_id): ?>
@@ -98,7 +119,7 @@
                     <?php endif; ?>
                 <?php endforeach; ?>
             <?php endforeach; ?>
-        </ul>
+        </ul> -->
 
     </body>
 </html>
