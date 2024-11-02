@@ -45,7 +45,7 @@ function loginUser($username, $password) {
 // Function to log out the user
 function logoutUser() {
     session_start(); // Start the session
-    unset($_SESSION['username']); // Clear the username session variable
-    session_destroy(); // Optionally destroy the session
+    unset($_SESSION['username']); 
+    session_destroy(); //Destroy the session
 }
 ?>

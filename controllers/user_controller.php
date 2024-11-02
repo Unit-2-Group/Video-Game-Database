@@ -7,10 +7,8 @@ $loginError = '';
 
 // Function to render views
 function renderView($view, $data = []) {
-    // Extract the data array into variables
     extract($data);
     
-    // Include the view file
     include $view;
 }
 
@@ -20,17 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Check for existing username or email (implement this in your user model if needed)
-    // Example:
-    // if (usernameExists($username) || emailExists($email)) {
-    //     $registrationError = "Username or email already taken.";
-    // } else {
     if (addUser($username, $email, $password)) {
         // Redirect or display a success message
-        echo "User registered successfully!";
-        // Optionally redirect to a login page or home page
-        // header('Location: login_view.php');
-        // exit();
+        echo "<h1>User registered successfully!<h1>";
     } else {
         $registrationError = "Error registering user.";
     }
@@ -43,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
     if (loginUser($username, $password)) {
         // Store username in session
-        session_start(); // Start session if not already started
-        $_SESSION['username'] = $username; // Store username in session
+        session_start(); 
+        $_SESSION['username'] = $username; 
         
         // Redirect to a welcome page
         header('Location: ../index.php');
@@ -56,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
 // Handle logout
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-    logoutUser(); // Call the logout function from the model
+    logoutUser(); 
     // Redirect to the home page or login page
-    header('Location: ../index.php'); // Change to your desired redirect page
-    exit(); // Make sure to exit after redirecting
+    header('Location: ../index.php'); 
+    exit(); 
 }
 
 
@@ -71,7 +61,7 @@ if (isset($_GET['view'])) {
         renderView('../views/registration_view.php', ['registrationError' => $registrationError]);
     }
 } else {
-    // Default view (could be a landing page or home)
+    // Default view
     renderView('../index.php');
 }
 

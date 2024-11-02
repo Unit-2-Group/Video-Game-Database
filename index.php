@@ -27,8 +27,8 @@
         <?php
         // Check if the username is set in the session
         if (isset($_SESSION['username'])) {
-            $username = htmlspecialchars($_SESSION['username']); // Sanitize the username
-            echo "Welcome, $username!<b>"; // Display the welcome message
+            $username = htmlspecialchars($_SESSION['username']); 
+            echo "<h2>Welcome, <u>$username!</u><h2>"; // welcome message
             // Logout button
             echo '<form action="controllers/user_controller.php?action=logout"
                     method="post" 
@@ -36,8 +36,9 @@
                     <button type="submit" class="logout-button">Logout</button>
                     </form>';
         } else {
-            echo '<a href="views/login_view.php">Click here to log in</a> or, 
-                  <a href="views/registration_view.php">sign up here</a>';
+            // Login or Sign Up prompt
+            echo '<b><a href="views/login_view.php">Click here to log in</a> or, 
+                  <a href="views/registration_view.php">sign up here</a></b>';
         }
         ?>
         </p>
