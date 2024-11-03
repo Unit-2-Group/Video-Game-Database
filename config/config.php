@@ -2,7 +2,7 @@
 
 $db_host = 'localhost';
 $db_user = 'root';
-$db_pass = 'Supercoco14';
+$db_pass = '';
 $db_name = 'videogame_db';
 
 function db_connect() {
