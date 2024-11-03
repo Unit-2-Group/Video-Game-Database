@@ -31,10 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $username = $_POST['login_username'];
     $password = $_POST['login_password'];
 
-    if (loginUser($username, $password)) {
+    if ($user = loginUser($username, $password)) {
         // Store username in session
-        session_start(); 
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start(); 
+        }
+        session_regenerate_id(true);
+        $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $username; 
+
+        error_log('User logged in. User ID: ' + $user['id'], 3, "/debug.txt");
         
         // Redirect to a welcome page
         header('Location: ../index.php');
@@ -64,5 +70,7 @@ if (isset($_GET['view'])) {
     // Default view
     renderView('../index.php');
 }
+
+
 
 ?>

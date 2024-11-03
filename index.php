@@ -1,12 +1,12 @@
 <?php 
     // Start Session Management
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start(); 
+    }
 
     include 'controllers/favorite_controller.php';
     include 'models/game_model.php';
     include 'models/genre_model.php';
-
-
 
     $favorites = getFavorites();
     $games = getAllGames();
@@ -14,10 +14,9 @@
  ?>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="maincss.css">
-
     <head>
         <title>Video Game Library</title>
+        <link rel="stylesheet" href="maincss.css">
     </head>
     <body>
         <header>
@@ -90,6 +89,8 @@
                                 <?php else: ?>
                                     <a href="controllers/favorite_controller.php?action=add&game_id=<?= $game['id'] ?>">Add to Favorites</a>
                                 <?php endif; ?>
+                                -
+                                <a href="views/reviews_view.php?game_id=<?= $game['id'] ?>">View Reviews</a>
 
                                 <form action="controllers/game_controller.php" method="post" style="display:inline;">
                                     <input type="hidden" name="game_id" value="<?= $game['id'] ?>">

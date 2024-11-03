@@ -2,16 +2,21 @@
 
 include '../models/review_model.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['add_review'])) {
-        $game_id = $_POST['game_id'];
-        $user_id = $_SESSION['user_id'];
-        $rating = $_POST['rating'];
-        $review_text = $_POST['review_text'];
+// Handle adding a review
+if (isset($_POST['add_review'])) {
+    $game_id = $_POST['game_id'] ?? null;
+    $user_id = $_SESSION['user_id'];
+    $rating = $_POST['rating'] ?? null;
+    $review_text = trim($_POST['review_text'] ?? '');
 
+    if ($user_id) {
         if (addReview($game_id, $user_id, $rating, $review_text)) {
-            header("Location: ../views/game_reviews.php?game_id=" . $game_id);
+            header("Location: ../views/reviews_view.php?game_id=" . $game_id); // Redirect to the reviews page for the game
             exit();
+        } else {
+            echo "Error: Unable to add review.";
         }
+    } else {
+        echo "You must be logged in to submit a review.";
     }
 }
