@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" name="register">Register</button>
         </form>
-        <p>Already have an account? <a href="../controllers/user_controller.php?view=login">Login here</a>.</p>
+        <p>Already have an account? <a href="../controllers/user_controller.php?view=login">Login here</a></p>
         <a href="../index.php">Home</a>
     </div>
 </body>

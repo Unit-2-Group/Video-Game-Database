@@ -133,6 +133,10 @@
     table tbody tr:hover {
         background-color: #e9f2ff;
     }
+
+    p {
+        text-align: center;
+    }
     
     /* Action Links */
     a {
