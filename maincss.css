@@ -1,152 +1,184 @@
-/* Reset basic styles for consistency */
-* {
+    /* Reset basic styles for consistency */
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    }
+    
+    /* Center content on the page */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    /* Container to wrap all content */
+    .container {
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+        
+    /* Header styling */
+    header {
+        background-color: #4a90e2;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+    }
 
-/* Set a nice background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-}
+     .signup-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
 
-/* Header styling */
-header {
-    background-color: #4a90e2;
-    color: #fff;
-    padding: 20px;
-    text-align: left;
-}
+    .signup-links a {
+        margin: 0 5px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Main title styling */
+    h2 {
+        color: #4a90e6;
+        margin: 20px 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    /* Logout Button */
+    .logout-button {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+    
+    /* Form Styling 
+     form {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    */
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #666;
+    }
+    
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form input[type="date"],
+    form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    form button {
+        background-color: #4a90e2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    form button:hover {
+        background-color: #357abd;
+    }
+    
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    table thead {
+        background-color: #4a90e2;
+        color: #fff;
+    }
+    
+    table th, table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    
+    table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    
+    table tbody tr:hover {
+        background-color: #e9f2ff;
+    }
 
-header h1 {
-    font-size: 2rem;
-}
-
-/* Main title styling */
-h2 {
-    color: #4a90e2;
-    margin: 20px 0;
-    font-size: 1.5rem;
-}
-
-/*Logout Button*/
-.logout-button {
-    margin-top: 20px; 
-}
-
-/* Form Styling */
-
-form {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    max-width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin-bottom: 8px;
-    color: #666;
-}
-
-form input[type="text"],
-form input[type="password"],
-form input[type="email"],
-form input[type="date"],
-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #357abd;
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table thead {
-    background-color: #4a90e2;
-    color: #fff;
-}
-
-table th, table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tbody tr:hover {
-    background-color: #e9f2ff;
-}
-
-/* Action Links */
-a {
-    color: #4a90e2;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Inline button styling for delete */
-form[action="controllers/game_controller.php"] button[type="submit"] {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-form[action="controllers/game_controller.php"] button[type="submit"]:hover {
-    background-color: #c0392b;
-}
-
-/* Favorites and Genres List Styling */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-ul li {
-    background-color: #fff;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-ul li:hover {
-    background-color: #f0f8ff;
-}
+    p {
+        text-align: center;
+    }
+    
+    /* Action Links */
+    a {
+        color: #4a90e2;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Inline button styling for delete */
+    form[action="controllers/game_controller.php"] button[type="submit"] {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+    
+    form[action="controllers/game_controller.php"] button[type="submit"]:hover {
+        background-color: #c0392b;
+    }
+    
+    /* Favorites and Genres List Styling */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+    
+    ul li {
+        background-color: #fff;
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    ul li:hover {
+        background-color: #f0f8ff;
+    }
