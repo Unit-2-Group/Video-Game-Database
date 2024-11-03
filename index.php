@@ -95,7 +95,6 @@
                                         <?php else: ?>
                                             <a href="controllers/favorite_controller.php?action=add&game_id=<?= $game['id'] ?>">Add to Favorites</a>
                                         <?php endif; ?>
-                                        -
                                         <a href="views/reviews_view.php?game_id=<?= $game['id'] ?>">View Reviews</a>
 
                                         <form action="controllers/game_controller.php" method="post" style="display:inline;">
