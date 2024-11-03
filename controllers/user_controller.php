@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $username; 
 
-        error_log('User logged in. User ID: ' + $user['id'], 3, "/debug.txt");
+        error_log('User logged in. User ID: ' . $user['id'], 3, "/debug.txt");
         
         // Redirect to a welcome page
         header('Location: ../index.php');

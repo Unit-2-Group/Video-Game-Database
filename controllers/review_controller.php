@@ -1,5 +1,9 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+}
+
 include '../models/review_model.php';
 
 // Handle adding a review

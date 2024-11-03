@@ -15,7 +15,6 @@ function getReviews($game_id) {
     $reviews = $result->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
     $conn->close();
-    print_r($reviews);
     return $reviews;
 }
 

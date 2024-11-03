@@ -2,8 +2,6 @@
 
 include_once __DIR__ . '/../config/config.php';
 
-$conn = db_connect();
-
 // Function to create a new user
 function addUser($username, $email, $password) {
     $conn = db_connect();
@@ -26,9 +24,8 @@ function loginUser($username, $password) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $user = $result-> fetch_assoc();
-
     if ($result->num_rows > 0) {
+        $user = $result-> fetch_assoc();
     
         if (password_verify($password, $user['password_hash'])) {
             // Start a session and save user info
@@ -39,7 +36,7 @@ function loginUser($username, $password) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
 
-            return true; // Login successful
+            return $user; // Login successful
         }
     }
 
@@ -52,6 +49,7 @@ function loginUser($username, $password) {
 function logoutUser() {
     session_start(); // Start the session
     unset($_SESSION['username']); 
+    unset($_SESSION['$user_id']);
     session_destroy(); //Destroy the session
 }
 ?>
