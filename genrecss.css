@@ -1,0 +1,161 @@
+    @media (max-width: 768px) {
+        .genre-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .genre-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    /* Reset basic styles for consistency */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        color: #333;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .main-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .genre-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .genre-item {
+        background-color: #f0f0f0;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .genre-item button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .add-genre-form {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .add-genre-form input[type="text"] {
+        padding: 8px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 10px;
+        width: 200px;
+    }
+    
+    .add-genre-form button {
+        padding: 8px 15px;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .add-genre-form button:hover {
+        background-color: #357abd;
+    }
+    
+    /* Header styling */
+    header {
+        background-color: #4a90e2;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Main title styling */
+    h2 {
+        color: #4a90e6;
+        margin: 20px 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #666;
+    }
+    
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form input[type="date"],
+    form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    form button {
+        background-color: #4a90e2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    form button:hover {
+        background-color: #357abd;
+    }
+
+    p {
+        text-align: center;
+    }
+    
+    /* Action Links */
+    a {
+        color: #4a90e2;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    

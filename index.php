@@ -58,6 +58,7 @@
                         <option value="<?= htmlspecialchars($genre['id']) ?>"><?= htmlspecialchars($genre['name']) ?></option>
                     <?php endforeach; ?>
                 </select>
+                <a href="views/genre_view.php">Add a Genre</a>
                 <br>
                 <label for="release_date">Release Date:</label>
                 <input type="date" id="release_date" name="release_date" required><br>
