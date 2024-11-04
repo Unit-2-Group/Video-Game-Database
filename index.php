@@ -58,6 +58,7 @@
                         <option value="<?= htmlspecialchars($genre['id']) ?>"><?= htmlspecialchars($genre['name']) ?></option>
                     <?php endforeach; ?>
                 </select>
+                <a href="views/genre_view.php">Add a Genre</a>
                 <br>
                 <label for="release_date">Release Date:</label>
                 <input type="date" id="release_date" name="release_date" required><br>
@@ -95,7 +96,6 @@
                                         <?php else: ?>
                                             <a href="controllers/favorite_controller.php?action=add&game_id=<?= $game['id'] ?>">Add to Favorites</a>
                                         <?php endif; ?>
-                                        -
                                         <a href="views/reviews_view.php?game_id=<?= $game['id'] ?>">View Reviews</a>
 
                                         <form action="controllers/game_controller.php" method="post" style="display:inline;">
